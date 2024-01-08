@@ -1,8 +1,9 @@
+import TodoForm from './TodoForm';
 import styles from './TodoInput.module.scss';
 import { useState } from 'react';
 
 function TodoInput() {
-  const [isShow, setIsShow] = useState(false);
+  const [isShow, setIsShow] = useState(true);
 
   const toggleForm = () => setIsShow(!isShow);
   return (
@@ -13,7 +14,7 @@ function TodoInput() {
           <h5>Add task</h5>
         </div>
       ) : (
-        <div>Todo form</div>
+        <TodoForm />
       )}
     </>
   );
