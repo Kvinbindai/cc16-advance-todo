@@ -1,11 +1,12 @@
 import React from 'react';
-import Button from './Button';
+import TodoHeader from './TodoHeader';
 
 function TodoContent() {
   return (
     <div>
-      TodoContent
-      <Button variant='secondary'>Test</Button>
+      <TodoHeader />
+      <div>Todo form</div>
+      <div>TodoList</div>
     </div>
   );
 }

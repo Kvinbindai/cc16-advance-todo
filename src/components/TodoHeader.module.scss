@@ -1,0 +1,25 @@
+@import '../styles/variable.scss';
+.header,
+.title,
+.btn__group {
+  display: flex;
+}
+
+.header {
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.title {
+  gap: 10px;
+  align-items: baseline;
+
+  & > p {
+    color: $dark-gray;
+    font-size: 14px;
+  }
+}
+
+.btn__group {
+  gap: 10px;
+}
