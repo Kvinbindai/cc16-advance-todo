@@ -1,0 +1,5 @@
+@import '../styles/variable.scss';
+.sidebar {
+  margin-top: $appbar_height;
+  position: fixed;
+}
