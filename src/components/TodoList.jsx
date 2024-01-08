@@ -38,6 +38,7 @@ function TodoList() {
       await axios.delete(`http://localhost:8080/api/todos/${id}`);
       console.log('delete success');
       // 1. update AllTodo หน้าบ้านใหม่
+      setAllTodos((cur) => [...cur].filter((todo) => todo.id !== id));
       // 2. fecth ใหม่
     } catch (error) {
       console.log(error);
