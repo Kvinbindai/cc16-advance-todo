@@ -16,7 +16,7 @@ function TodoInput() {
           <h5>Add task</h5>
         </div>
       ) : (
-        <TodoForm onClose={closeForm} />
+        <TodoForm confirmText='Add Task' onClose={closeForm} />
       )}
     </>
   );

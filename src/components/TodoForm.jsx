@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Button from './Button';
 import styles from './TodoForm.module.scss';
 
-function TodoForm({ onClose }) {
+function TodoForm({ onClose, confirmText }) {
   const [text, setText] = useState('');
   const [date, setDate] = useState('');
   const [isError, setIsError] = useState(false);
@@ -40,7 +40,7 @@ function TodoForm({ onClose }) {
             Cancel
           </Button>
           <Button type='submit' role='submit' variant='primary'>
-            Add task
+            {confirmText}
           </Button>
         </div>
       </div>
