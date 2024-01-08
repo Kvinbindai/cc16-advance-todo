@@ -3,7 +3,7 @@ import TodoForm from './TodoForm';
 import styles from './TodoItem.module.scss';
 import { HiCheck, HiOutlinePencil, HiTrash } from 'react-icons/hi';
 
-function TodoItem({ id, task, status, date, deleteTodoById }) {
+function TodoItem({ todo, deleteTodoById, editTodoById }) {
   const [isEdit, setIsEdit] = useState(false);
 
   const onClose = () => setIsEdit(false);
@@ -14,22 +14,24 @@ function TodoItem({ id, task, status, date, deleteTodoById }) {
         <li className={styles.todo__item}>
           <div className={styles.todo__detail}>
             <span className={styles.todo__status}>
-              <HiCheck className={`${styles.todo__status__icon} ${status && `${styles.done}`}`} />
+              <HiCheck
+                className={`${styles.todo__status__icon} ${todo.status && `${styles.done}`}`}
+              />
             </span>
-            <p>{task}</p>
+            <p>{todo.task}</p>
           </div>
           <div className={styles.todo__action}>
-            <p>{date}</p>
+            <p>{todo.date}</p>
             <span>
               <HiOutlinePencil onClick={handleEdit} />
             </span>
-            <span onClick={() => deleteTodoById(id)}>
+            <span onClick={() => deleteTodoById(todo.id)}>
               <HiTrash />
             </span>
           </div>
         </li>
       ) : (
-        <TodoForm confirmText='Edit Task' onClose={onClose} task={task} date={date} />
+        <TodoForm confirmText='Edit Task' oldTodo={todo} onClose={onClose} onEdit={editTodoById} />
       )}
     </>
   );

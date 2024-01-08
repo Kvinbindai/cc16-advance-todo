@@ -2,9 +2,9 @@ import { useState } from 'react';
 import Button from './Button';
 import styles from './TodoForm.module.scss';
 
-function TodoForm({ onClose, confirmText, task, date: oldDate }) {
-  const [text, setText] = useState(task || '');
-  const [date, setDate] = useState(oldDate || '');
+function TodoForm({ oldTodo, onClose, onEdit, confirmText }) {
+  const [text, setText] = useState(oldTodo.task || '');
+  const [date, setDate] = useState(oldTodo.date || '');
   const [isError, setIsError] = useState(false);
 
   const handleSubmit = (event) => {

@@ -70,10 +70,7 @@ function TodoList() {
       {allTodos.map((todo) => (
         <TodoItem
           key={todo.id}
-          id={todo.id}
-          task={todo.task}
-          status={todo.status}
-          date={todo.date}
+          todo={todo}
           deleteTodoById={deleteTodoById}
           editTodoById={editTodoById}
         />
