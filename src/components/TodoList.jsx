@@ -31,10 +31,30 @@ function TodoList() {
   useEffect(() => {
     fetchAllTodo();
   }, []);
+
+  // handleDelete
+  const deleteTodoById = async (id) => {
+    try {
+      await axios.delete(`http://localhost:8080/api/todos/${id}`);
+      console.log('delete success');
+      // 1. update AllTodo หน้าบ้านใหม่
+      // 2. fecth ใหม่
+    } catch (error) {
+      console.log(error);
+      console.log('delete suck');
+    }
+  };
   return (
     <ul>
       {allTodos.map((todo) => (
-        <TodoItem key={todo.id} task={todo.task} status={todo.status} date={todo.date} />
+        <TodoItem
+          key={todo.id}
+          id={todo.id}
+          task={todo.task}
+          status={todo.status}
+          date={todo.date}
+          deleteTodoById={deleteTodoById}
+        />
         //  <TodoItem {...todo} />
       ))}
     </ul>

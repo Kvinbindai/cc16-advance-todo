@@ -3,7 +3,7 @@ import TodoForm from './TodoForm';
 import styles from './TodoItem.module.scss';
 import { HiCheck, HiOutlinePencil, HiTrash } from 'react-icons/hi';
 
-function TodoItem({ task, status, date }) {
+function TodoItem({ id, task, status, date, deleteTodoById }) {
   const [isEdit, setIsEdit] = useState(false);
 
   const onClose = () => setIsEdit(false);
@@ -23,7 +23,7 @@ function TodoItem({ task, status, date }) {
             <span>
               <HiOutlinePencil onClick={handleEdit} />
             </span>
-            <span>
+            <span onClick={() => deleteTodoById(id)}>
               <HiTrash />
             </span>
           </div>
