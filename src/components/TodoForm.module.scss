@@ -16,8 +16,9 @@
     padding: 10px;
   }
 
-  &__task > input:focus {
-    outline: none;
+  &__error {
+    color: $primary;
+    font-size: 16px;
   }
 
   &__date {
