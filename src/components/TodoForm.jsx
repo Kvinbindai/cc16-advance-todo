@@ -3,8 +3,8 @@ import Button from './Button';
 import styles from './TodoForm.module.scss';
 
 function TodoForm({ oldTodo, onClose, onEdit, confirmText }) {
-  const [text, setText] = useState(oldTodo.task || '');
-  const [date, setDate] = useState(oldTodo.date || '');
+  const [text, setText] = useState(oldTodo?.task || '');
+  const [date, setDate] = useState(oldTodo?.date || '');
   const [isError, setIsError] = useState(false);
 
   const handleSubmit = (event) => {
@@ -12,6 +12,13 @@ function TodoForm({ oldTodo, onClose, onEdit, confirmText }) {
     if (text.trim() === '') {
       setIsError(true);
     } else {
+      // Can Edit or Create // แยกโหมด edit ด้วย oldTodo
+      if (oldTodo) {
+        const newTodoObj = { ...oldTodo, task: text, date: date };
+        onEdit(newTodoObj.id, newTodoObj);
+      }
+      // else create
+
       setIsError(false);
       onClose();
     }

@@ -49,9 +49,10 @@ function TodoList() {
 
   // handleEditTodo
   const editTodoById = async (id, newTodoObj) => {
+    console.log(id, newTodoObj);
     try {
       const response = await axios.put(`http://localhost:8080/api/todos/${id}`, newTodoObj);
-      console.log(response.data);
+      console.log(response);
       // ยิงสำเร็จ
       // 1. Edit state
       const newTodoList = [...allTodos];

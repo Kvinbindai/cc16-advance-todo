@@ -8,12 +8,16 @@ function TodoItem({ todo, deleteTodoById, editTodoById }) {
 
   const onClose = () => setIsEdit(false);
   const handleEdit = () => setIsEdit(true);
+  const updateStatus = () => {
+    const updatedTodo = { ...todo, status: !todo.status };
+    editTodoById(todo.id, updatedTodo);
+  };
   return (
     <>
       {!isEdit ? (
         <li className={styles.todo__item}>
           <div className={styles.todo__detail}>
-            <span className={styles.todo__status}>
+            <span className={styles.todo__status} onClick={updateStatus}>
               <HiCheck
                 className={`${styles.todo__status__icon} ${todo.status && `${styles.done}`}`}
               />
