@@ -1,8 +1,10 @@
 import { useState } from 'react';
 import Button from './Button';
 import styles from './TodoForm.module.scss';
+import { useTodos } from '../context/TodoContext';
 
-function TodoForm({ oldTodo, onClose, onEdit, onAdd, confirmText }) {
+function TodoForm({ oldTodo, onClose, confirmText }) {
+  const { addTodo, editTodoById } = useTodos();
   const [text, setText] = useState(oldTodo?.task || '');
   const [date, setDate] = useState(oldTodo?.date || '');
   const [isError, setIsError] = useState(false);
@@ -15,11 +17,11 @@ function TodoForm({ oldTodo, onClose, onEdit, onAdd, confirmText }) {
       // Can Edit or Create // แยกโหมด edit ด้วย oldTodo
       if (oldTodo) {
         const newTodoObj = { ...oldTodo, task: text, date: date };
-        onEdit(newTodoObj.id, newTodoObj);
+        editTodoById(newTodoObj.id, newTodoObj);
       } else {
         // TASK : convert Date Format
         // let dateInput = date || new Date().now();
-        onAdd({ task: text, status: false, date: '2024-01-08' });
+        addTodo({ task: text, status: false, date: '2024-01-08' });
       }
 
       setIsError(false);

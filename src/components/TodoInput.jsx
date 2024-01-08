@@ -2,7 +2,7 @@ import TodoForm from './TodoForm';
 import styles from './TodoInput.module.scss';
 import { useState } from 'react';
 
-function TodoInput({ addTodo }) {
+function TodoInput() {
   const [isShow, setIsShow] = useState(false);
 
   const openForm = () => setIsShow(true);
@@ -16,11 +16,7 @@ function TodoInput({ addTodo }) {
           <h5>Add task</h5>
         </div>
       ) : (
-        <TodoForm 
-          confirmText='Add Task' 
-          onClose={closeForm} 
-          onAdd={addTodo}
-          />
+        <TodoForm confirmText='Add Task' onClose={closeForm} />
       )}
     </>
   );

@@ -78,4 +78,5 @@ export default function TodoContextProvider({ children }) {
 // s-5 : custom Hook
 export function useTodos() {
   return useContext(TodoContext);
+  // return { allTodos, addTodo, editTodoById, deleteTodoById }
 }

@@ -2,8 +2,10 @@ import { useState } from 'react';
 import TodoForm from './TodoForm';
 import styles from './TodoItem.module.scss';
 import { HiCheck, HiOutlinePencil, HiTrash } from 'react-icons/hi';
+import { useTodos } from '../context/TodoContext';
 
-function TodoItem({ todo, deleteTodoById, editTodoById }) {
+function TodoItem({ todo }) {
+  const { editTodoById, deleteTodoById } = useTodos();
   const [isEdit, setIsEdit] = useState(false);
 
   const onClose = () => setIsEdit(false);
@@ -35,7 +37,7 @@ function TodoItem({ todo, deleteTodoById, editTodoById }) {
           </div>
         </li>
       ) : (
-        <TodoForm confirmText='Edit Task' oldTodo={todo} onClose={onClose} onEdit={editTodoById} />
+        <TodoForm confirmText='Edit Task' oldTodo={todo} onClose={onClose} />
       )}
     </>
   );
