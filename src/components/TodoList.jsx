@@ -40,9 +40,29 @@ function TodoList() {
       // 1. update AllTodo หน้าบ้านใหม่
       setAllTodos((cur) => [...cur].filter((todo) => todo.id !== id));
       // 2. fecth ใหม่
+      // await fetchAllTodo()
     } catch (error) {
       console.log(error);
       console.log('delete suck');
+    }
+  };
+
+  // handleEditTodo
+  const editTodoById = async (id, newTodoObj) => {
+    try {
+      const response = await axios.put(`http://localhost:8080/api/todos/${id}`, newTodoObj);
+      console.log(response.data);
+      // ยิงสำเร็จ
+      // 1. Edit state
+      const newTodoList = [...allTodos];
+      const foundedIndex = newTodoList.findIndex((todo) => todo.id === id);
+      if (foundedIndex !== -1) {
+        newTodoList.splice(foundedIndex, 1, newTodoObj);
+        setAllTodos(newTodoList);
+      }
+      // 2. fetch ใหม่
+    } catch (error) {
+      console.log(error);
     }
   };
   return (
@@ -55,6 +75,7 @@ function TodoList() {
           status={todo.status}
           date={todo.date}
           deleteTodoById={deleteTodoById}
+          editTodoById={editTodoById}
         />
         //  <TodoItem {...todo} />
       ))}
