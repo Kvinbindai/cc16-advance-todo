@@ -3,6 +3,7 @@
 .todo__item {
   display: flex;
   padding: 10px 10px 10px 0px;
+  align-items: center;
 }
 
 .todo__detail {
@@ -36,6 +37,7 @@
 
 .todo__action {
   display: flex;
+  align-items: center;
   gap: 10px;
   color: $dark-gray;
 

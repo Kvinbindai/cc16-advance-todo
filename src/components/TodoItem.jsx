@@ -11,7 +11,7 @@ function TodoItem({ task, status, date }) {
   return (
     <>
       {!isEdit ? (
-        <li onClick={handleEdit} className={styles.todo__item}>
+        <li className={styles.todo__item}>
           <div className={styles.todo__detail}>
             <span className={styles.todo__status}>
               <HiCheck className={`${styles.todo__status__icon} ${status && `${styles.done}`}`} />
@@ -21,7 +21,7 @@ function TodoItem({ task, status, date }) {
           <div className={styles.todo__action}>
             <p>{date}</p>
             <span>
-              <HiOutlinePencil />
+              <HiOutlinePencil onClick={handleEdit} />
             </span>
             <span>
               <HiTrash />
