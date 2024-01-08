@@ -4,7 +4,7 @@ import TodoHeader from './TodoHeader';
 function TodoContent() {
   return (
     <div>
-      <TodoHeader />
+      <TodoHeader title='Inbox' />
       <div>Todo form</div>
       <div>TodoList</div>
     </div>
