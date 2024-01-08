@@ -1,11 +1,12 @@
 import React from 'react';
 import TodoHeader from './TodoHeader';
+import TodoInput from './TodoInput';
 
 function TodoContent() {
   return (
     <div>
       <TodoHeader title='Inbox' />
-      <div>Todo form</div>
+      <TodoInput />
       <div>TodoList</div>
     </div>
   );
