@@ -5,6 +5,7 @@ const TodoContext = createContext();
 
 // s-2 : Provider
 export default function TodoContextProvider({ children }) {
+  console.log(children);
   return <TodoContext.Provider value={{}}>{children}</TodoContext.Provider>;
 }
 

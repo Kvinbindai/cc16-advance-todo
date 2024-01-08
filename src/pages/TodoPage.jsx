@@ -9,14 +9,12 @@ function TodoPage() {
   return (
     <>
       <Appbar />
-      <AppLayout>
-        <TodoContextProvider>
+      <TodoContextProvider>
+        <AppLayout>
           <Sidebar />
-          {/* Filter : TODO */}
           <TodoContent />
-          {/* CRUD : TODO */}
-        </TodoContextProvider>
-      </AppLayout>
+        </AppLayout>
+      </TodoContextProvider>
     </>
   );
 }
