@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Button from './Button';
 import styles from './TodoForm.module.scss';
 
-function TodoForm({ oldTodo, onClose, onEdit, confirmText }) {
+function TodoForm({ oldTodo, onClose, onEdit, onAdd, confirmText }) {
   const [text, setText] = useState(oldTodo?.task || '');
   const [date, setDate] = useState(oldTodo?.date || '');
   const [isError, setIsError] = useState(false);
@@ -16,8 +16,11 @@ function TodoForm({ oldTodo, onClose, onEdit, confirmText }) {
       if (oldTodo) {
         const newTodoObj = { ...oldTodo, task: text, date: date };
         onEdit(newTodoObj.id, newTodoObj);
+      } else {
+        // TASK : convert Date Format
+        // let dateInput = date || new Date().now();
+        onAdd({ task: text, status: false, date: '2024-01-08' });
       }
-      // else create
 
       setIsError(false);
       onClose();

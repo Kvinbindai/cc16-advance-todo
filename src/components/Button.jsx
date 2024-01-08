@@ -1,7 +1,7 @@
 import styles from './Button.module.scss';
 
 function Button({ children, onClick, variant = 'primary', ...props }) {
-  console.log(props);
+  // console.log(props);
   let finalBg = variant === 'primary' ? styles.primary : styles.secondary;
   return (
     <button
