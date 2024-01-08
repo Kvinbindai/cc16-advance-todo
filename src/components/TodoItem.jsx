@@ -29,7 +29,7 @@ function TodoItem({ task, status, date }) {
           </div>
         </li>
       ) : (
-        <TodoForm confirmText='Edit Task' onClose={onClose} />
+        <TodoForm confirmText='Edit Task' onClose={onClose} task={task} date={date} />
       )}
     </>
   );
