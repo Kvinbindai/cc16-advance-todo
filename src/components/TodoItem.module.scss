@@ -1,0 +1,45 @@
+@import '../styles/variable.scss';
+
+.todo__item {
+  display: flex;
+  padding: 10px 10px 10px 0px;
+}
+
+.todo__detail {
+  flex: 1;
+  display: flex;
+  gap: 10px;
+}
+
+.todo__status {
+  min-width: 24px;
+  max-height: 24px;
+  border-radius: 50%;
+  border: 1px solid gray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__icon {
+    font-size: 16px;
+    display: none;
+  }
+
+  &:hover > * {
+    display: block;
+  }
+}
+
+.done {
+  display: block;
+}
+
+.todo__action {
+  display: flex;
+  gap: 10px;
+  color: $dark-gray;
+
+  & > p {
+    font-size: 14px;
+  }
+}
