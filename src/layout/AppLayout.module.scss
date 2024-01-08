@@ -1,0 +1,14 @@
+@import '../styles/variable.scss';
+
+.app__content {
+  display: flex;
+  height: calc(100vh - $appbar_height);
+}
+
+.sidebar {
+  width: $sidebar_width;
+}
+
+.content {
+  width: calc(100vw - $sidebar_width);
+}

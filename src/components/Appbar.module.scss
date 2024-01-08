@@ -1,0 +1,7 @@
+@import '../styles/variable.scss';
+
+.appbar {
+  background-color: $primary;
+  height: $appbar_height;
+  color: $white;
+}

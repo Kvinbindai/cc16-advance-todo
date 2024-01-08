@@ -1,0 +1,22 @@
+@import './styles/variable.scss';
+
+.bg-red {
+  background-color: red;
+}
+.bg-wheat {
+  background-color: wheat;
+}
+
+.app__content {
+  display: flex;
+  height: calc(100vh - $appbar_height);
+}
+
+.sidebar {
+  width: $sidebar_width;
+}
+
+.content {
+  width: calc(100vw - $sidebar_width);
+  // flex: 1;
+}
