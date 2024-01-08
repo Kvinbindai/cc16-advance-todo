@@ -1,11 +1,11 @@
-import React from 'react';
+import styles from './TodoContent.module.scss';
 import TodoHeader from './TodoHeader';
 import TodoInput from './TodoInput';
 import TodoList from './TodoList';
 
 function TodoContent() {
   return (
-    <div>
+    <div className={styles.todo__container}>
       <TodoHeader title='Inbox' />
       <TodoInput />
       <TodoList />

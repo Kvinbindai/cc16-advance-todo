@@ -1,0 +1,8 @@
+@import '../styles/variable.scss';
+
+.todo__container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+}
